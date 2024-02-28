@@ -1,0 +1,149 @@
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --useful-grey: rgba(255, 255, 255, 0.6);
+    --theme-color: rgb(126, 26, 219);
+}
+
+/* Background */
+
+body {
+    height: 100vh;
+    background: url("../res/bg.jpg") no-repeat center center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Register form container */
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    width: 500px;
+    margin: 10px;
+    padding: 5px 20px 15px 20px;
+
+    border: 2px solid var(--useful-grey);
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    animation-name: container;
+    animation-duration: 1s;
+}
+
+@keyframes container {
+    from {
+        opacity: 0;
+        filter: blur(20px);
+    }
+    to {
+        opacity: 1;
+        filter: none;
+    }
+}
+
+#container::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+    background-color: var(--useful-grey);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Register form */
+
+#register-form {
+    width: 100%;
+}
+
+/* Heading */
+
+#register-h {
+    font-size: 2.4rem;
+}
+
+/* Input boxes */
+
+.npt {
+    position: relative;
+
+    outline: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.npt::placeholder {
+    color: var(--useful-grey);
+}
+
+.pass::-ms-reveal {
+    filter: invert(100%);
+}
+
+/* Input underline */
+
+.line {
+    width: 96%;
+    height: 2px;
+    margin: auto;
+
+    background-color: white;
+}
+
+/* All elements in container */
+
+.elements {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 30px;
+}
+
+/* Submit button */
+
+#sbmt {
+    margin-top: 40px;
+    font-size: 1rem;
+
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: var(--theme-color);
+    color: white;
+}
+
+#sbmt:hover {
+    background-color: rgba(109, 36, 192, 0.753);
+}
+
+/* Login text */
+
+#login-t {
+    text-decoration: none;
+    color: var(--theme-color);
+    text-shadow: 1px 1px 5px black;
+    font-weight: bold;
+}
